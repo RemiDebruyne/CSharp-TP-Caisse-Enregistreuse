@@ -1,0 +1,16 @@
+﻿@model Produit
+@{
+}
+
+<div class="card" style="width: 18rem;">
+    @* <img src="..." class="card-img-top" alt="..."> *@
+  <div class="card-body">
+    <h5 class="card-title">@Html.DisplayFor(model => model.Nom)</h5>
+    <p class="card-text">@Html.DisplayFor(model => model.Description)</p>
+    <div class="d-flex justify-content-between">
+        <p class="btn btn-primary">@Html.DisplayFor(model => model.Prix) € </p>
+        <p>@Html.DisplayNameFor(model => model.Quantite)</p>
+    </div>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+</div>
+  </div>

@@ -1,0 +1,33 @@
+﻿
+@model List<Produit>
+
+@{
+}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">@Html.DisplayNameForInnerType((Produit model) => model.Nom)</th>
+      <th scope="col">@Html.DisplayNameForInnerType((Produit model) => model.Description)</th>
+      <th scope="col">@Html.DisplayNameForInnerType((Produit model) => model.Prix)</th>
+      <th scope="col">@Html.DisplayNameForInnerType((Produit model) => model.Quantite)</th>
+      <th scope="col">@Html.DisplayNameForInnerType((Produit model) => model.Categorie)</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+        @foreach (var p in Model)
+        {
+        <tr>
+            <td>@p.Nom</td>
+            <td>@p.Description</td>
+            <td>@p.Prix</td>
+            <td>@p.Quantite</td>
+            <td>@p.Categorie</td>
+            <td>@p.ImagePath</td>
+            <td><a asp-action="">Details</a></td>
+        </tr> 
+        }
+  </tbody>
+</table>
