@@ -1,0 +1,25 @@
+﻿
+@model List<Categorie>
+
+@{
+}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">@Html.DisplayNameForInnerType((Categorie model) => model.Nom)</th>
+      <th scope="col">@Html.DisplayNameForInnerType((Categorie model) => model.ProduitList)</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Nom</td>
+                <td>@p.ProduitList</td>
+            </tr> 
+        }
+  </tbody>
+</table>

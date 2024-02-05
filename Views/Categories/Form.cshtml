@@ -1,0 +1,17 @@
+﻿@model Categorie
+@{
+	bool isUpdate = Model != null;
+	ViewData["Title"] = (isUpdate ? "Modifier" : "Ajouter") + " une catégorie";
+
+}
+
+<h1>@(isUpdate ? "Modifier" : "Ajouter")</h1>
+
+<form asp-action="submitCategorie">
+	<input asp-for="Id" type="hidden" class="form-control">
+		<div class="mb-3">
+			<label asp-for="Nom" class="form-label"></label>
+			<input asp-for="Nom" type="text" class="form-control">
+		</div>
+	<button type="submit" class="btn btn-primary">Ajouter</button>
+</form>

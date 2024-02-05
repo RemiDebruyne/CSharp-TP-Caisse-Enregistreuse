@@ -22,6 +22,8 @@ namespace Caisse_Enregistreuse.Models
         [Display(Name = "Categorie")]
         private Categorie _categorie;
 
+        private int _categorieId;
+
         private string? _imagePath;
 
         [Key]
@@ -32,5 +34,6 @@ namespace Caisse_Enregistreuse.Models
         public int Quantite { get => _quantite; set => _quantite = value; }
         public Categorie Categorie { get => _categorie; set => _categorie = value; }
         public string ImagePath { get => _imagePath; set => _imagePath = value; }
+        public int CategorieId { get => _categorieId; set => _categorieId = value; }
     }
 }

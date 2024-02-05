@@ -1,35 +1,38 @@
-﻿@model Produit
+﻿@model ProduitCategorieViewModel
 @{
     bool isUpdate = Model != null;
-    ViewData["Title"] = (isUpdate ? "Modifier" : "Ajouter") + " un Animal";
+    ViewData["Title"] = (isUpdate ? "Modifier" : "Ajouter") + " un produit";
 
 }
 
 <h1>@(isUpdate ? "Modifier" : "Ajouter")</h1>
 
 <form asp-action="submitProduit" enctype="multipart/form-data">
-    <input asp-for="Id" type="hidden" class="form-control">
+    <input asp-for="@Model.Produit.Id" type="hidden" class="form-control">
         <div class="mb-3">
-        <label asp-for="Nom" class="form-label"></label>
-        <input asp-for="Nom" type="text" class="form-control">
+        <label asp-for="@Model.Produit.Nom" class="form-label"></label>
+        <input asp-for="@Model.Produit.Nom" type="text" class="form-control">
 
     </div>
     <div class="mb-3">
-        <label asp-for="Description" class="form-label"></label>
-        <input asp-for="Description" type="text" class="form-control">
+        <label asp-for="@Model.Produit.Description" class="form-label"></label>
+        <input asp-for="@Model.Produit.Description" type="text" class="form-control">
 
     </div>
     <div class="mb-3">
-        <label asp-for="Prix" class="form-label"></label>
-        <input asp-for="Prix" type="number" class="form-control">
+        <label asp-for="@Model.Produit.Prix" class="form-label"></label>
+        <input asp-for="@Model.Produit.Prix" type="number" class="form-control">
     </div>
     <div class="mb-3">
-        <label asp-for="Quantite" class="form-label"></label>
-        <input asp-for="Quantite" type="number" class="form-control">
+        <label asp-for="@Model.Produit.Quantite" class="form-label"></label>
+        <input asp-for="@Model.Produit.Quantite" type="number" class="form-control">
     </div>    
     <div class="mb-3">
-        <label asp-for="Categorie" class="form-label"></label>
-        <input asp-for="Categorie" type="text" class="form-control">
+        <label asp-for="@Model.Produit.Categorie" class="form-label"></label>
+        @Html.DropDownListFor(Model => Model.Categories)
+@*         <select asp-for="@Model.Produit.Categorie"  asp-items="@Model.Categories" class="form-control">
+            
+        </select> *@
     </div
     <div class="mb-3">
         <label class="form-label">Photo de l'animal</label>

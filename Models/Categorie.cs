@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Caisse_Enregistreuse.Models
 {
@@ -9,9 +10,11 @@ namespace Caisse_Enregistreuse.Models
 
         [Display(Name = "Nom")]
         private string _nom;
-        private List<Produit> _produitList;
 
-        [Key]
+        [Display(Name = "Liste des produits")]
+        private List<Produit>? _produitList;
+
+
         public int Id { get => _id; set => _id = value; }
         public string Nom { get => _nom; set => _nom = value; }
         public List<Produit> ProduitList { get => _produitList; set => _produitList = value; }
